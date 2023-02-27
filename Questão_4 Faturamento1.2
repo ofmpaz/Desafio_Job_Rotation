@@ -1,0 +1,47 @@
+package processo_seletivoJob;
+
+import java.util.Scanner;
+
+public class Questao4 {
+
+	public static Scanner scan = new Scanner(System.in);
+	public static void main(String[] args) {
+		/*4) Dado o valor de faturamento mensal de uma distribuidora, detalhado por estado:
+ 		SP – R$67.836,43
+		RJ – R$36.678,66
+		MG – R$29.229,88
+		ES – R$27.165,48
+		Outros – R$19.849,53
+		Escreva um programa na linguagem que desejar onde calcule o percentual de 
+		representação que cada estado teve dentro do valor total mensal da distribuidora.
+		 */
+
+		double lucroEstadual, lucroTotal;  
+		System.out.println(calculaPercentual());
+		
+
+	}
+
+	public static double calculaPercentual() {
+		double lucroEstadual, porcentagemEstudal, total;
+		System.out.println("Informe o lucro Estadual");
+		lucroEstadual = scan.nextDouble(); 
+		System.out.println("Informe o lucro de todos os estudados");
+		total = calculaLucroTotal();
+		porcentagemEstudal = (lucroEstadual * 100) / total; 
+		return porcentagemEstudal; 
+	}
+
+	public static double calculaLucroTotal() {
+		double sp, rj, mg, es, outros, soma; 
+		sp = scan.nextDouble();
+		rj = scan.nextDouble();
+		mg = scan.nextDouble();
+		es = scan.nextDouble();
+		outros = scan.nextDouble();
+		soma = (sp + rj + mg + es + outros);
+
+		return soma; 
+	}
+
+}
